@@ -1,0 +1,9 @@
+{
+  "comp": {
+    "prefix": "comp",
+    "body": [
+      "type ${1:props} = {${2:props};",
+      "export const ${3:Component} = ({}: ${4:props}) => {${5:body}};"
+    ]
+  }
+}

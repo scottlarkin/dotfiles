@@ -1,0 +1,105 @@
+{
+  "f": {
+    "prefix": "f",
+    "body": ["(${1:}) => {${0:}}"]
+  },
+  "fr": {
+    "prefix": "fr",
+    "body": ["(${1:}) => ${0:}"]
+  },
+  "cf": {
+    "prefix": "cf",
+    "body": "const ${1:name} = (${2:}) => {${0:}};"
+  },
+  "af": {
+    "prefix": "af",
+    "body": "async (${1:}) => {${0:}}"
+  },
+  "caf": {
+    "prefix": "caf",
+    "body": "const ${1:name} = async (${2:}) => {${0:}};"
+  },
+
+  "co": {
+    "prefix": "co",
+    "body": "const ${1:name} = {${2:}};"
+  },
+  "ca": {
+    "prefix": "ca",
+    "body": "const ${1:name} = [${2:}];"
+  },
+  "cod": {
+    "prefix": "cod",
+    "body": "const {${1:name}} = ${2:obj};"
+  },
+  "cad": {
+    "prefix": "cad",
+    "body": "const [${1:name}] = ${2:arr};"
+  },
+
+  "cadap": {
+    "prefix": "cadap",
+    "body": "const [${1:name}] = await Promise.all(${2:arr});"
+  },
+
+  "for": {
+    "prefix": "for",
+    "body": "for (let i = 0; i < ${1:start}; i++) {${2:body}}"
+  },
+
+  "if": {
+    "prefix": "if",
+    "body": "if (${1:cond}) {${0:}}"
+  },
+
+  "eli": {
+    "prefix": "eli",
+    "body": "else if (${1:cond}) {${0:}}"
+  },
+  "else": {
+    "prefix": "else",
+    "body": "else {${0:}}"
+  },
+  "t": {
+    "prefix": "t",
+    "body": "${1:cond} ? ${2:then} : ${3:else}"
+  },
+
+  "e": {
+    "prefix": "e",
+    "body": "==="
+  },
+
+  "ne": {
+    "prefix": "ne",
+    "body": "!=="
+  },
+
+  "lt": {
+    "prefix": "lt",
+    "body": "<"
+  },
+
+  "lte": {
+    "prefix": "lte",
+    "body": "<="
+  },
+
+  "gt": {
+    "prefix": "gt",
+    "body": ">"
+  },
+
+  "gte": {
+    "prefix": "gte",
+    "body": ">"
+  },
+  "and": {
+    "prefix": "an",
+    "body": "&& "
+  },
+  "or": {
+    "prefix": "or",
+    "body": "|| "
+  }
+}
