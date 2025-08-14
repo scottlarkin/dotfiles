@@ -7,5 +7,5 @@
 
 if [ "$SENDER" = "front_app_switched" ]; then
   sketchybar --set "$NAME" label="$INFO"
-  sketchybar --set $NAME label.color="0xffdf6309"
+  sketchybar --set $NAME label.color="0xffffffff"
 fi

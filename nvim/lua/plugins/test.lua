@@ -36,11 +36,16 @@ end
 
 return {
 	{ "nvim-neotest/neotest-jest" },
-	{ "thenbe/neotest-playwright" },
+	-- TOOO: make this work with playwright
+	-- { "thenbe/neotest-playwright" },
 	{
 		"nvim-neotest/neotest",
+		-- neotest author broke somehting in a recent update, this is the last stable commit
+		-- https://github.com/nvim-neotest/neotest/issues/531
+		commit = "52fca6717ef972113ddd6ca223e30ad0abb2800c",
 		opts = {
 			adapters = {
+				-- TOOO: make this work with playwright
 				-- ["neotest-playwright"] = {
 				-- 	options = {
 				-- 		-- Use this to customize the command to run when using Playwright.
@@ -63,6 +68,8 @@ return {
 				["neotest-jest"] = {
 					jestCommand = "pnpm test --",
 					jestConfigFile = function(file)
+						-- HACK: must be a bettwe way to do this
+
 						--try to resolve the correct jest config for this project
 						if string.find(file, "___tests___") then
 							local dir = string.match(file, "(.-/[^/]+/)__tests__")

@@ -17,3 +17,9 @@ map("n", "<BS>", "<C-o>", { noremap = true, silent = true })
 map("n", "<Del>", "<C-i>", { noremap = true, silent = true })
 
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+function SetTheme(color)
+	color = color or "tokyonight-night"
+	vim.cmd.colorscheme(color)
+end
+SetTheme()
