@@ -1,0 +1,23 @@
+cursor-color = #ff9999
+
+theme = tokyonight_night
+
+macos-titlebar-style = hidden
+
+window-decoration = false
+
+title = " "
+
+macos-titlebar-proxy-icon = hidden
+
+background-opacity = 0.73
+
+font-thicken = true
+font-thicken-strength=255
+
+
+font-family = ""
+font-family = "Hack Nerd Font Mono"
+
+window-padding-x = 16
+window-padding-y = 8,0
