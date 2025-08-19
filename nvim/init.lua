@@ -18,6 +18,10 @@ map("n", "<Del>", "<C-i>", { noremap = true, silent = true })
 
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+-- recenter cursor when scrolling up/down
+map("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
+map("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
+
 function SetTheme(color)
 	color = color or "tokyonight-night"
 	vim.cmd.colorscheme(color)
