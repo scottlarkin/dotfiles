@@ -38,6 +38,7 @@ alias lg='lazygit'
 alias ls='ls --color'
 # apply prettier to all changed files 
 alias prf='prettier --write $(git diff --name-only)'
+alias typos='opencode run  "look at the diff between the current branch and the dev branch and find any typos or silly mistakes" -m anthropic/claude-3-5-haiku-20241022'
 
 . "$HOME/.local/bin/env"
 
@@ -67,3 +68,17 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}'
 
 bindkey -v
+
+# pnpm
+export PNPM_HOME="/Users/scottlarkin/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="/opt/homebrew/opt/pnpm@9/bin:$PATH"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+export PATH="$HOME/.local/bin:$PATH"
