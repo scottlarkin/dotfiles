@@ -38,7 +38,7 @@ alias lg='lazygit'
 alias ls='ls --color'
 # apply prettier to all changed files 
 alias prf='prettier --write $(git diff --name-only)'
-alias typos='opencode run  "look at the diff between the current branch and the dev branch and find any typos or silly mistakes" -m anthropic/claude-3-5-haiku-20241022'
+alias typos='cursor-agent "look at the diff between the current branch and the local dev branch and find any typos or silly mistakes. Look at file names too. Consider code conventions depending on the language used." -p'
 
 . "$HOME/.local/bin/env"
 
