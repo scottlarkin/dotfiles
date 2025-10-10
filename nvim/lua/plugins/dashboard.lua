@@ -26,6 +26,11 @@ return {
 		"folke/snacks.nvim",
 		optional = true,
 		opts = {
+			picker = {
+				sources = {
+					files = { hidden = true },
+				},
+			},
 			dashboard = {
 				width = 90,
 				preset = {
