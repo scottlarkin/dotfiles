@@ -41,6 +41,9 @@ alias prf='prettier --write $(git diff --name-only)'
 alias typos='cursor-agent "look at the diff between the current branch and the local dev branch and find any typos or silly mistakes. Look at file names too. Consider code conventions depending on the language used." -p'
 alias typosfix='cursor-agent --force "look at the diff between the current branch and the local dev branch and find any typos or silly mistakes. Look at file names too. Consider code conventions depending on the language used. Fix any typos (ignore differences between US and british spelling)" -p'
 
+
+alias commit='cursor-agent "look at my staged changes. come up with a clear and concise commit message and description output as json {commit:string; description:string;}. the commit message must be meaningful but no more than 6 words. the description must be less than 20 words" -p --model grok' 
+
 . "$HOME/.local/bin/env"
 
 
@@ -83,3 +86,10 @@ export PATH="/opt/homebrew/opt/pnpm@9/bin:$PATH"
 
 eval "$(atuin init zsh)"
 export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "/Users/scottlarkin/.bun/_bun" ] && source "/Users/scottlarkin/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
