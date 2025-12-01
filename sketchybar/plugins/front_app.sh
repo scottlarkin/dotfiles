@@ -6,6 +6,10 @@
 # https://felixkratz.github.io/SketchyBar/config/events#events-and-scripting
 
 if [ "$SENDER" = "front_app_switched" ]; then
-  sketchybar --set "$NAME" label="$INFO"
-  sketchybar --set $NAME label.color="0xffffffff"
+  APP_NAME="$INFO"
+  # Truncate long app names to keep the bar clean
+  if [ ${#APP_NAME} -gt 20 ]; then
+    APP_NAME="${APP_NAME:0:17}..."
+  fi
+  sketchybar --set "$NAME" label="$APP_NAME"
 fi
