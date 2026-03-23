@@ -26,6 +26,9 @@ return {
 		"folke/snacks.nvim",
 		optional = true,
 		opts = {
+			notifier = {
+				enabled = false,
+			},
 			picker = {
 				sources = {
 					files = { hidden = true },

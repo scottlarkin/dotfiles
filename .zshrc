@@ -22,16 +22,22 @@ zstyle ':omz:plugins:nvm' lazy yes
 plugins=(git nvm pnpm starship zsh-syntax-highlighting zsh-autosuggestions)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-autoload -U compinit && compinit
+# Optimize compinit - only check for updates once per day (faster startup)
+autoload -U compinit
+# Regenerate compdump if older than 24 hours, otherwise use cached version
+if [[ -n ${HOME}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 
 source $ZSH/oh-my-zsh.sh
 
 
 export EDITOR='nvim'
 
-
-
-nvm alias default 22
+# nvm alias default - only set once, not on every shell startup
+# Run manually: nvm alias default 22
 
 alias ll='ls -al'
 alias lg='lazygit'
@@ -49,15 +55,13 @@ alias commit='cursor-agent "look at my staged changes. come up with a clear and 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
+# Initialize starship (only once - removed duplicate)
 eval "$(starship init zsh)"
 
 if [[ "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select" || \
       "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select-wrapped" ]]; then
     zle -N zle-keymap-select "";
 fi
-
-eval "$(starship init zsh)"
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
@@ -73,14 +77,14 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-Z}'
 
 bindkey -v
 
-# pnpm
+# pnpm - consolidated PATH addition
 export PNPM_HOME="/Users/scottlarkin/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
-export PATH="/opt/homebrew/opt/pnpm@9/bin:$PATH"
+# Add homebrew pnpm if not already in PATH
+[[ ":$PATH:" != *":/opt/homebrew/opt/pnpm@9/bin:"* ]] && export PATH="/opt/homebrew/opt/pnpm@9/bin:$PATH"
 
 . "$HOME/.atuin/bin/env"
 

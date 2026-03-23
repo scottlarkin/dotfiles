@@ -66,7 +66,7 @@ return {
 				-- 	},
 				-- },
 				["neotest-jest"] = {
-					jestCommand = "pnpm test --",
+					jestCommand = "pnpm test ",
 					jestConfigFile = function(file)
 						-- HACK: must be a bettwe way to do this
 
