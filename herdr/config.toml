@@ -1,0 +1,37 @@
+[theme]
+name = "tokyo-night"
+auto_switch = false
+
+[ui.toast]
+delivery = "system"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+[experimental]
+pane_history = true
+switch_ascii_input_source_in_prefix = true
+
+# Prefix-free macOS shortcuts matching cmux's defaults. Ghostty's matching
+# outer-terminal shortcuts are unbound so these reach Herdr.
+# The prefix bindings remain available as fallbacks.
+[keys]
+new_workspace = ["prefix+shift+n", "cmd+n"]
+rename_workspace = ["prefix+shift+w", "cmd+shift+r"]
+workspace_picker = ["prefix+w", "cmd+p"]
+goto = ["prefix+g", "cmd+g"]
+
+focus_pane_left = ["prefix+h", "cmd+alt+left"]
+focus_pane_down = ["prefix+j", "cmd+alt+down"]
+focus_pane_up = ["prefix+k", "cmd+alt+up"]
+focus_pane_right = ["prefix+l", "cmd+alt+right"]
+
+previous_tab = ["prefix+p", "cmd+shift+["]
+next_tab = ["prefix+n", "cmd+shift+]"]
+new_tab = ["prefix+c", "cmd+t"]
+
+split_vertical = ["prefix+v", "cmd+d"]
+split_horizontal = ["prefix+minus", "cmd+shift+d"]
+close_pane = ["prefix+x", "cmd+w"]
+zoom = ["prefix+z", "cmd+shift+enter"]
+toggle_sidebar = ["prefix+b", "cmd+b"]

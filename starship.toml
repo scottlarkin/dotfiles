@@ -1,0 +1,34 @@
+
+add_newline = false
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+
+[git_branch]
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+format = "([$all_status$ahead_behind]($style) )"
+
+[cmd_duration]
+min_time = 1500
+format = "took [$duration]($style) "
+
+[custom.herdr]
+command = '''herdr workspace get "$HERDR_WORKSPACE_ID" 2>/dev/null | jq -r '.result.workspace.label // .result.workspace.workspace_id // empty' 2>/dev/null'''
+when = '''test "${HERDR_ENV:-}" = 1 && test -n "${HERDR_WORKSPACE_ID:-}"'''
+symbol = "herdr:"
+format = "[$symbol$output]($style) "
+style = "bold cyan"
+description = "Current Herdr workspace"
+
+[custom.muninn]
+command = '''sketchybar --query muninn 2>/dev/null | jq -r '.label.value // empty' 2>/dev/null'''
+when = true
+symbol = "󰧑 "
+format = "[$symbol](bold purple)[$output](bold) "
+description = "Muninn health cached by SketchyBar"
+
+[gcloud]
+disabled = true
