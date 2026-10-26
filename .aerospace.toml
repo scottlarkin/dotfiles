@@ -1,3 +1,6 @@
+config-version = 2
+# v1 inferred these from workspace bindings; v2 requires them explicit.
+persistent-workspaces = ['A', 'B', 'C', 'D', 'P', 'S', 'T', 'X', 'Z']
 
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
@@ -106,6 +109,7 @@ outer.right = 8
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
+alt-shift-f = 'layout floating tiling'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'

@@ -29,7 +29,7 @@ with a single `sketchybar --set "$NAME" ...`. It never reads state; it is a pure
 | `$SELECTED`| For space items: whether this space is focused                          |
 
 Two update models, pick one per item: `update_freq=<seconds>` for polling (clock 1s, cpu/ram 5s,
-muninn 15s, battery 120s) or `--subscribe <item> <event>` for push (`volume_change`,
+muninn 15s, battery 120s, claude/codex usage 300s) or `--subscribe <item> <event>` for push (`volume_change`,
 `front_app_switched`, `system_woke`, `power_source_change`). Add `updates=when_shown` to items that
 are pointless off-screen (volume does this). Don't poll something an event already reports.
 
@@ -101,7 +101,9 @@ Consequences to keep in mind:
 ## External dependencies
 
 Plugins shell out to: `pmset` (battery), `sysctl` / `vm_stat` / `ps` / `awk` (cpu, ram), `osascript`
-(volume), `date` (clock), `aerospace` (spaces), and `curl` + `jq` (muninn). `jq` is the newest
+(volume), `date` (clock), `aerospace` (spaces), `curl` + `jq` (muninn), and `~/.local/bin/ai-usage` + `jq`
+(`ai_usage.sh`, one script for both usage items, provider passed as `$1`; it reads Claude's OAuth token
+from the login Keychain and Codex's from `~/.codex/auth.json`). `jq` is the newest
 addition — a plugin that needs a non-stock binary should degrade to a visible error state rather than
 render blank, the way `muninn.sh` shows a red cross on an unreachable endpoint.
 

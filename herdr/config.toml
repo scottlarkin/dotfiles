@@ -1,3 +1,4 @@
+onboarding = false
 [theme]
 name = "tokyo-night"
 auto_switch = false
@@ -9,6 +10,7 @@ delivery = "system"
 show_agent_labels_on_pane_borders = true
 
 [experimental]
+kitty_graphics = true
 pane_history = true
 switch_ascii_input_source_in_prefix = true
 

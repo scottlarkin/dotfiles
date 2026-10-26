@@ -12,7 +12,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=34 blur_radius=50 color=0x801a1b26 y_offset=0 margin=0
+sketchybar --bar position=top height=34 color=0x00000000 y_offset=0 margin=0
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -154,7 +154,18 @@ sketchybar --add item battery right \
            label.padding_left=0 \
            label.padding_right=8 \
            script="$PLUGIN_DIR/ram.sh" \
-           --add item muninn right \
+           --add item disk right \
+           --set disk update_freq=60 icon=󰋊 icon.color=0xff7dcfff label.color=0xff7dcfff \
+           background.color=0xff414868 \
+           background.corner_radius=7 \
+           background.height=20 \
+           background.drawing=on \
+           padding_left=3 \
+           padding_right=7 \
+           label.padding_left=0 \
+           label.padding_right=8 \
+           script="$PLUGIN_DIR/disk.sh" \
+           --add item muninn left \
            --set muninn update_freq=15 icon=󰧑 icon.color=0xff9ece6a label.color=0xff9ece6a \
            background.color=0xff414868 \
            background.corner_radius=7 \
@@ -164,7 +175,31 @@ sketchybar --add item battery right \
            padding_right=7 \
            label.padding_left=0 \
            label.padding_right=8 \
-           script="$PLUGIN_DIR/muninn.sh"
+           script="$PLUGIN_DIR/muninn.sh" \
+           --add item claude_usage left \
+           --set claude_usage update_freq=300 \
+           background.color=0xff414868 \
+           background.corner_radius=7 \
+           background.height=20 \
+           background.drawing=on \
+           padding_left=3 \
+           padding_right=7 \
+           label.padding_left=0 \
+           label.padding_right=8 \
+           script="$PLUGIN_DIR/ai_usage.sh claude" \
+           --subscribe claude_usage system_woke \
+           --add item codex_usage left \
+           --set codex_usage update_freq=300 \
+           background.color=0xff414868 \
+           background.corner_radius=7 \
+           background.height=20 \
+           background.drawing=on \
+           padding_left=3 \
+           padding_right=7 \
+           label.padding_left=0 \
+           label.padding_right=8 \
+           script="$PLUGIN_DIR/ai_usage.sh codex" \
+           --subscribe codex_usage system_woke
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
