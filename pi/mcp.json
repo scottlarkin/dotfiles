@@ -1,0 +1,46 @@
+{
+  "mcpServers": {
+    "neo4j": {
+      "command": "neo4j-mcp",
+      "description": "Muninn agent-memory graph (neo4j)"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--extension",
+        "--output-dir",
+        "/tmp/playwright-mcp"
+      ],
+      "description": "Drive the user's own signed-in Chrome via the Playwright extension"
+    },
+    "aikido": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@aikidosec/mcp@1.0.28"
+      ],
+      "description": "Aikido security scanning"
+    },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp",
+      "description": "Search and read Notion pages and databases"
+    },
+    "slack": {
+      "url": "https://mcp.slack.com/mcp",
+      "oauth": {
+        "clientId": "1601185624273.8899143856786",
+        "callbackUrl": "http://localhost:3118/callback"
+      },
+      "description": "Search and read Slack messages and channels"
+    },
+    "datadog": {
+      "url": "https://mcp.datadoghq.eu/v1/mcp",
+      "description": "Datadog logs, metrics, traces and monitors"
+    },
+    "linear": {
+      "url": "https://mcp.linear.app/mcp",
+      "description": "Linear issues, projects and comments"
+    }
+  }
+}

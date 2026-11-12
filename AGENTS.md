@@ -52,7 +52,14 @@ whole, so **new files inside a linked directory are picked up with no action nee
 ~/.config/sketchybar -> ~/repos/dotfiles/sketchybar
 ~/.config/ghostty -> ~/repos/dotfiles/ghostty
 ~/.config/atuin/atuin -> ~/repos/dotfiles/atuin   # nested one level too deep; atuin never reads it
+~/.pi/agent/{settings,keybindings,mcp}.json -> ~/repos/dotfiles/pi/*.json
+~/.pi/agent/extensions/{plan-mode,vim-editor.ts,muninn.ts} -> ~/repos/dotfiles/pi/extensions/*
 ```
+
+pi is linked per file, not as a directory: `~/.pi/agent` also holds OAuth tokens (`auth.json`,
+`mcp-auth.json`), sessions and installed packages, and `extensions/herdr-agent-state.ts` is
+rewritten by `herdr integration install pi`. pi rewrites `settings.json` in place (no rename), so
+the link survives `pi install` / `pi remove`.
 
 Adding a new tool means creating the link explicitly (`ln -s ~/repos/dotfiles/<x> ~/.config/<x>`)
 and saying so — don't assume a new top-level directory is active.
