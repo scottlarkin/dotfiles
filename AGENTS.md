@@ -53,7 +53,7 @@ whole, so **new files inside a linked directory are picked up with no action nee
 ~/.config/ghostty -> ~/repos/dotfiles/ghostty
 ~/.config/atuin/atuin -> ~/repos/dotfiles/atuin   # nested one level too deep; atuin never reads it
 ~/.pi/agent/{settings,keybindings,mcp}.json -> ~/repos/dotfiles/pi/*.json
-~/.pi/agent/extensions/{plan-mode,vim-editor.ts,muninn.ts} -> ~/repos/dotfiles/pi/extensions/*
+~/.pi/agent/extensions/{plan-mode,muninn.ts} -> ~/repos/dotfiles/pi/extensions/*
 ```
 
 pi is linked per file, not as a directory: `~/.pi/agent` also holds OAuth tokens (`auth.json`,

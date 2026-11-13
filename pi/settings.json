@@ -11,17 +11,15 @@
     "npm:@narumitw/pi-usage",
     "npm:pi-herdr-agents",
     "npm:pi-straw-boss",
-    "npm:@ravshansbox/pi-statusline",
     "npm:cc-safety-net",
     "npm:pi-btw",
-    "npm:pi-lens",
-    "npm:pi-intercom"
+    "npm:pi-intercom",
+    "npm:pi-vim"
   ],
   "extensionChangelogVersions": {
     "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.47.0",
     "{\"source\":\"npm:pi-context-view\",\"scope\":\"user\"}": "0.8.4",
     "{\"source\":\"npm:@narumitw/pi-usage\",\"scope\":\"user\"}": "0.69.2",
-    "{\"source\":\"npm:pi-herdr-agents\",\"scope\":\"user\"}": "3.9.0",
-    "{\"source\":\"npm:pi-lens\",\"scope\":\"user\"}": "4.4.12"
+    "{\"source\":\"npm:pi-herdr-agents\",\"scope\":\"user\"}": "3.9.0"
   }
 }
