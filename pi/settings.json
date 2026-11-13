@@ -21,5 +21,20 @@
     "{\"source\":\"npm:pi-context-view\",\"scope\":\"user\"}": "0.8.4",
     "{\"source\":\"npm:@narumitw/pi-usage\",\"scope\":\"user\"}": "0.69.2",
     "{\"source\":\"npm:pi-herdr-agents\",\"scope\":\"user\"}": "3.9.0"
-  }
+  },
+  "showHardwareCursor": true,
+  "editorPaddingX": 1,
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "steeringMode": "all",
+  "followUpMode": "all",
+  "hideThinkingBlock": false,
+  "markdown": {
+    "mermaid": "streaming"
+  },
+  "quietStartup": true,
+  "defaultProjectTrust": "always",
+  "tuiMode": "fullscreen",
+  "theme": "system"
 }

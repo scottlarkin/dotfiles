@@ -9,6 +9,7 @@
       "args": [
         "@playwright/mcp@latest",
         "--extension",
+        "--background",
         "--output-dir",
         "/tmp/playwright-mcp"
       ],
